@@ -4,10 +4,11 @@ class StringPattern{
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         int flag = 0;
-        System.out.println(str.length());
+        // System.out.println(str.length());
         if(str.length() == 15){
-            String[] s = str.split("_", 3);
+            String[] s = str.split("_", 5);
             for(String i: s){
+                // System.out.println(i);
                 if(i.length()==3){
                     for(int j=0; j < i.length(); j++){
                         int a = i.charAt(j);
@@ -15,23 +16,29 @@ class StringPattern{
                             flag = 1;
                         }
                         else{
-                            System.out.println(1);
-                            System.out.println("invalid");
+                            // System.out.println(1);
+                            flag = 0;
+                            break;
                         }
                     }
                 }
                 else{
-                    System.out.println(2);
-                    System.out.println("invalid");
+                    // System.out.println(2);
+                    flag = 0;
+                    break;
+
                 }
             }
         }
         else{
-            System.out.println(3);
-            System.out.println("invalid");
+            // System.out.println(3);
+            flag = 0;
         }
         if(flag == 1){
             System.out.println("valid");
+        }
+        else {
+        	System.out.println("invalid");
         }
     }
 }
