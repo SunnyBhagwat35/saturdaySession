@@ -1,16 +1,13 @@
 import java.util.Scanner;
 
-public class StringPattern {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
+public class StringPattern2 {
+
+    public static void ValidateIdWith12Chars(String str){
         int flag = 0;
-        // System.out.println(str.length());
         if(str.length() == 15){
             String[] s = str.split("_", 5);
             main:
             for(String i: s){
-                // System.out.println(i);
                 if(i.length()==3){
                     for(int j=0; j < i.length(); j++){
                         int a = i.charAt(j);
@@ -18,14 +15,12 @@ public class StringPattern {
                             flag = 1;
                         }
                         else{
-                            // System.out.println(1);
                             flag = 0;
                             break main;
                         }
                     }
                 }
                 else{
-                    // System.out.println(2);
                     flag = 0;
                     break main;
 
@@ -33,7 +28,6 @@ public class StringPattern {
             }
         }
         else{
-            // System.out.println(3);
             flag = 0;
         }
         if(flag == 1){
@@ -43,22 +37,25 @@ public class StringPattern {
             System.out.println("invalid");
         }
     }
+
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String str = sc.next();
+            ValidateIdWith12Chars(str);
+        }
+    }
 }
-
-
-// '''
-// A student can choose a student ID. Only conditions are 
-// - It should have groups of three characters separated by "_".
-// - Can only contain numbers 0-9 and characters a-z and A-Z.(other than "_")
-// - Contains 12 characters excluding the "_"
-
-// Write a program to check for valid student IDs.
-// The input will have a student ID and 
-// The output should say "valid" if the entered ID is valid otherwise it should say "invalid".
-
-// Sample Input:
-// ADI_239_Sep_B37
-
-// Sample Output:
-// valid
-// '''
+/*
+ADI_239_Sep_B37
+valid
+aBc3E_Xy58e_123De
+invalid
+@aBc3E_Xy5_12e
+invalid
+A@I_239_Sep_B37
+invalid
+SUN_271_Nov_100
+valid
+*/
