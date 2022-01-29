@@ -59,12 +59,28 @@ public class SecretMsg{
 
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your encrypted password: ");
-        String password = sc.next();
+        
+        
 
-        System.out.println("Enter your step size: ");
-        int step = sc.nextInt();
+        while(true){
+            System.out.print("Enter your  password: ");
+            String password = sc.next();
 
-        System.out.println("Your decoded string: "+decode(password, step));
+            System.out.print("Enter your step: ");
+            int step = sc.nextInt();
+            System.out.println("Your decoded password: "+decode(password, step));
+        }
     }
 }
+// Enter your  password: banana
+// Enter your step: 7
+// Your decoded password: utgtgt
+// Enter your  password: letTc  
+// Enter your step: 4
+// Your decoded password: hapPy
+// Enter your  password: Hexe  
+// Enter your step: 4
+// Your decoded password: Data
+// Enter your  password: wxyhCmrk 
+// Enter your step: 4
+// Your decoded password: studYing
