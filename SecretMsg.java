@@ -60,16 +60,14 @@ public class SecretMsg{
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
         
+        System.out.print("Enter your  password: ");
+        String password = sc.next();
+
+        System.out.print("Enter your step: ");
+        int step = sc.nextInt();
         
+        System.out.println("Your decoded password: "+decode(password, step));
 
-        while(true){
-            System.out.print("Enter your  password: ");
-            String password = sc.next();
-
-            System.out.print("Enter your step: ");
-            int step = sc.nextInt();
-            System.out.println("Your decoded password: "+decode(password, step));
-        }
     }
 }
 // Enter your  password: banana
