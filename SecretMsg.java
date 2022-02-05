@@ -40,7 +40,6 @@ public class SecretMsg{
         for(int i = 0; i < password.length(); i++){
             letter = password.charAt(i);
 
-
             if(letter - step < 97 && letter >= 97){
                 correct = 123 - Math.abs( 97 - (letter - step));
                 decode += (char)correct;
@@ -60,12 +59,12 @@ public class SecretMsg{
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("Enter your  password: ");
+        System.out.print("Enter your password: ");
         String password = sc.next();
 
         System.out.print("Enter your step: ");
         int step = sc.nextInt();
-        
+
         System.out.println("Your decoded password: "+decode(password, step));
 
     }
